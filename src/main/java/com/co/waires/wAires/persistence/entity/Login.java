@@ -3,28 +3,16 @@ package com.co.waires.wAires.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "login")
+@Table(name = "empleados")
 public class Login {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idLogin")
-    private Integer idLogin;
-
-    @Column(name = "usuario")
+    @Column(name = "cedula")
     private String usuario;
 
     @Column(name = "contraseña")
     private String contraseña;
-
-    public Integer getIdLogin() {
-        return idLogin;
-    }
-
-    public void setIdLogin(Integer idLogin) {
-        this.idLogin = idLogin;
-    }
-
+    
     public String getUsuario() {
         return usuario;
     }
