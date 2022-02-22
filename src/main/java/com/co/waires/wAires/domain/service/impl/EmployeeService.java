@@ -8,6 +8,7 @@ import com.co.waires.wAires.persistence.repository.IEmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService implements IEmployeeService {
@@ -20,7 +21,7 @@ public class EmployeeService implements IEmployeeService {
         this.employRepository = employRepository;
     }
 
-    public EmployeeDTO getEmployById(String cedula) {
+    public EmployeeDTO getEmployById(int cedula) {
         Employee employee = employRepository.findById(cedula).orElseThrow(() -> new RuntimeException("El id del empleado no fue encontrado"));
         return employMapper.mapFromEntity(employee);
     }
@@ -43,9 +44,12 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public String deleteEmploy(String cedula) {
-        employRepository.findById(cedula).orElseThrow(() -> new RuntimeException("El id del empleado no existe"));
+    public EmployeeDTO deleteEmploy(int cedula) {
+        Optional<Employee> employee = employRepository.findById(cedula);
+        if(!employee.isPresent()){
+            new RuntimeException("El id del empleado no existe");
+        }
         employRepository.deleteById(cedula);
-        return "El empleado fue eliminado con exito";
+        return employMapper.mapFromEntity(employee.get());
     }
 }

@@ -14,7 +14,7 @@ public class  WAiresConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                 .allowedOrigins("http://localhost:4200")
+                 .allowedOrigins("https://waires-1f43e.web.app")
                  .allowedMethods("*")
                  .maxAge(3600);
             }

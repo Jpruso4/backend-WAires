@@ -20,7 +20,7 @@ public class EmployeeMapper implements IEmployeeMapper {
         employeeDTO.setNombre(employee.getNombre());
         employeeDTO.setCelular(employee.getCelular());
         employeeDTO.setCorreo(employee.getCorreo());
-        employeeDTO.setContraseña(employee.getContraseña());
+        employeeDTO.setContrasena(employee.getContraseña());
         employeeDTO.setActivo(employee.getActivo());
         employeeDTO.setPerfil(employee.getIdPerfil());
         return employeeDTO;
@@ -33,7 +33,7 @@ public class EmployeeMapper implements IEmployeeMapper {
         employee.setNombre(employDTO.getNombre());
         employee.setCelular(employDTO.getCelular());
         employee.setCorreo(employDTO.getCorreo());
-        employee.setContraseña(employDTO.getContraseña());
+        employee.setContraseña(employDTO.getContrasena());
         employee.setActivo(employDTO.getActivo());
         employee.setIdPerfil(employDTO.getPerfil());
         return employee;

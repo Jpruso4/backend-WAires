@@ -8,7 +8,7 @@ public class Employee {
 
     @Id
     @Column(name = "cedula")
-    private String cedula;
+    private int cedula;
 
     @Column(name = "nombre")
     private String nombre;
@@ -26,13 +26,13 @@ public class Employee {
     private Character activo;
 
     @Column(name = "id_perfil_fk")
-    private String idPerfil;
+    private int idPerfil;
 
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
 
@@ -76,11 +76,11 @@ public class Employee {
         this.activo = activo;
     }
 
-    public String getIdPerfil() {
+    public int getIdPerfil() {
         return idPerfil;
     }
 
-    public void setIdPerfil(String idPerfil) {
+    public void setIdPerfil(int idPerfil) {
         this.idPerfil = idPerfil;
     }
 }

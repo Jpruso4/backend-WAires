@@ -20,7 +20,7 @@ public class EmployeeController {
 
 
     @GetMapping("/{cedula}")
-    public ResponseEntity<EmployeeDTO> getEmployById(@PathVariable ("cedula") String cedula){
+    public ResponseEntity<EmployeeDTO> getEmployById(@PathVariable ("cedula") int cedula){
         return new ResponseEntity(employService.getEmployById(cedula), HttpStatus.OK);
     }
 
@@ -40,7 +40,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/delete/{cedula}")
-    public ResponseEntity<EmployeeDTO> deleteEmploy(@PathVariable("cedula") String cedula){
+    public ResponseEntity<EmployeeDTO> deleteEmploy(@PathVariable("cedula") int cedula){
         return new ResponseEntity(employService.deleteEmploy(cedula), HttpStatus.OK);
     }
 }
